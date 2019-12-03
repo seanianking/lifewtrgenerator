@@ -1,0 +1,20 @@
+#generate {
+    color: white;
+    background-color: red;
+
+}
+#copy {
+    color: white;
+    background-color: blue;
+
+}
+#password {
+    width: auto;
+}
+h1 {
+    text-align: center;
+}
+#display {
+    position: fixed;
+    align-content: center;
+}

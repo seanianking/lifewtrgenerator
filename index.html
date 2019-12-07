@@ -18,9 +18,17 @@
                 <div class="row ">
                         <h2 id="genpass">Generate a Password</h2>
                 </div> 
-                <div class="row">
+                <div id="textbox" class="row">
                         <textarea id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
                 </div>
+                <input type="checkbox" name="requirement1" value="uppercase"> Require upper case letters
+                <br>
+                <input type="checkbox" name="requirement2" value="lowercase"> Require lower case letters
+                <br>
+                <input type="checkbox" name="requirement3" value="specials"> Require special characters
+                <br>
+                <input type="checkbox" name="requirement4" value="specials"> Require numbers
+                <br>
                   <div class="row">
                       <div class="col-md-6">
                             <button id="generate">Generate Password</button>

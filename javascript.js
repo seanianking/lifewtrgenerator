@@ -7,23 +7,21 @@ var submitEl = document.getElementById("generate");
 var copyEl = document.getElementById("copy");
 var passwordEl = document.getElementById("password");
 
-
-
-//password generate function
-passwordEl.addEventListener("click", function (){
-
-var passwordSelector = "";
-let length = parseInt(lengthEl.value);
-let lowerCase = lowerEl.checked;
-let upperCase = upperEl.checked;
-let specials = specialEl.checked;
-let numbers = numberEl.checked;
-
 //datasets to pull from
 var upperSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowerSet = "abcdefghijklmnopqrstuvwxyz";
 var numbSet = "0123456789";
 var specSet = "`~!@#$%^&*()_-+=|}{[]';:/?><,.";
+
+//password generate function
+passwordEl.addEventListener("click", function (){
+
+var passwordSelector = "";
+var length = parseInt(lengthEl.value);
+var lowerCase = lowerEl.checked;
+var upperCase = upperEl.checked;
+var specials = specialEl.checked;
+var numbers = numberEl.checked;
 
 //reading if boxes are checked, which characters will be used
 
@@ -42,6 +40,13 @@ if (numbers){
 if (length < 8 || length > 100 ) {
     alert("Password must be between 8 and 100 characters long");
 };
-passwordEl.innerText(length, passwordSelector);
+passwordEl.value = passwordGenerate(length, passwordSelector)
 
 })
+passwordGenerate = function (length, passwordSelector){
+    let createdPassword = "";
+    for (i=0; i<length; i++){
+        createdPassword = passwordSelector.charAt(Math.floor(Math.random() * passwordSelector.length));  
+};
+passwordEl.innerHTML = createdPassword;
+}

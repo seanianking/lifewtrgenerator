@@ -8,4 +8,4 @@ https://seanianking.github.io/lifewtrgenerator/index.html
 
 ## Contents
 
-![Image of webpage](Password gen main.png)
+![Image of webpage](Passwordgenmain.png)

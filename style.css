@@ -15,3 +15,8 @@ h1 {
     position: fixed;
     align-content: center;
 }
+#password {
+    width: 960px;
+    align-content: center;
+}
+

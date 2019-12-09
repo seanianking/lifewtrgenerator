@@ -1,4 +1,4 @@
-var lengthEl = document.getElementById("length");
+var lengthEl = document.getElementById("passlength");
 var upperEl = document.getElementById("uppercase");
 var lowerEl = document.getElementById("lowercase");
 var specialEl = document.getElementById("specials");
@@ -14,7 +14,7 @@ var numbSet = "0123456789";
 var specSet = "`~!@#$%^&*()_-+=|}{[]';:/?><,.";
 
 //password generate function
-passwordEl.addEventListener("click", function (){
+submitEl.addEventListener("click", function () {
 
 var passwordSelector = "";
 var length = parseInt(lengthEl.value);
@@ -37,16 +37,27 @@ if (specials){
 if (numbers){
     passwordSelector += numbSet
 };
-if (length < 8 || length > 100 ) {
-    alert("Password must be between 8 and 100 characters long");
+if (length < 8 || length > 100 || !length ) {
+    alert("Password length must be entered must be between 8 and 100 characters long")
+    return
 };
-passwordEl.value = passwordGenerate(length, passwordSelector)
+if (!lowerCase && !upperCase && !specials && !numbers){
+    alert("You must check at least one option box")
+    return
+};
+passwordEl.value = passwordGenerate(length, passwordSelector);
 
-})
+});
 passwordGenerate = function (length, passwordSelector){
     let createdPassword = "";
     for (i=0; i<length; i++){
-        createdPassword = passwordSelector.charAt(Math.floor(Math.random() * passwordSelector.length));  
+        createdPassword += passwordSelector.charAt(Math.floor(Math.random() * passwordSelector.length));  
 };
-passwordEl.innerHTML = createdPassword;
+    return createdPassword;
+
+    //This is what I had originally put instead of the return function
+    //passwordEl.innerHTML = createdPassword;
 }
+
+//Copy to clipboard function
+

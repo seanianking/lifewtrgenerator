@@ -61,3 +61,11 @@ passwordGenerate = function (length, passwordSelector){
 
 //Copy to clipboard function
 
+copyEl.addEventListener("click", function copyToClip () {
+    var passCopy = document.getElementById("password");
+    passCopy.select();
+    passCopy.setSelectionRange(0, 99999);
+
+    document.execCommand("copy");
+    alert("Copied your password.");
+})

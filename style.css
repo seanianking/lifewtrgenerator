@@ -14,9 +14,17 @@ h1 {
 #display {
     position: fixed;
     align-content: center;
+    background-color: steelblue;
 }
 #password {
-    width: 960px;
+    width: 80%;
+    align-content: center; 
+    
+}
+#textbox {
     align-content: center;
 }
 
+body {
+    background-color: slategray;
+}
